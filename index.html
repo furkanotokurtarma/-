@@ -1,19 +1,4 @@
-
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <style>
-                body {
-                  background-color: white; /* Ensure the iframe has a white background */
-                }
-    
-                
-              </style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
@@ -21,7 +6,7 @@
   <meta name="keywords" content="oto kurtarma, çekici hizmeti, yol yardım, acil çekici, bursa oto kurtarma, 7/24 çekici, kaza kurtarma, araç çekici, furkan oto kurtarma">
   <meta name="description" content="Furkan Oto Kurtarma - Türkiye genelinde 7/24 profesyonel çekici, oto kurtarma ve yol yardım hizmetleri sunmaktadır.">
   <title>Furkan Oto Kurtarıcı</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " rel="stylesheet" />
   <style>
     :root {
       --primary: #d9230f;
@@ -45,17 +30,18 @@
       background-color: var(--gray);
     }
 
+    /* HEADER */
     header {
-      background: var(--primary) url('https://www.reklamzamani.net/dosyalar/dosya/696187828.png') center / cover no-repeat;
+      background: var(--primary) url('https://www.reklamzamani.net/dosyalar/dosya/696187828.png ') center / cover no-repeat;
       color: var(--light);
-      min-height: 300px;
+      min-height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
       overflow: hidden;
-      padding: 4rem 0;
+      padding: 6rem 0;
     }
 
     header::before {
@@ -68,7 +54,7 @@
     }
 
     .logo {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       font-weight: 800;
       letter-spacing: 2px;
       color: #ff0000;
@@ -78,7 +64,7 @@
     }
 
     .slogan {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       margin-top: 10px;
       font-weight: 300;
       color: #ff0000;
@@ -131,12 +117,12 @@
       background: var(--secondary);
       color: var(--light);
       text-decoration: none;
-      font-size: 1.6rem;
-      padding: 18px;
-      margin: 30px auto;
+      font-size: 2rem;
+      padding: 20px;
+      margin: 40px auto;
       border-radius: 10px;
       width: 90%;
-      max-width: 500px;
+      max-width: 600px;
       text-align: center;
       transition: all 0.3s ease;
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -160,11 +146,12 @@
     }
 
     .emergency-btn:hover {
-      transform: translateY(-5px);
       background: #e64a19;
+      transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
+    section#about,
     section#services,
     section#fun-facts,
     section#contact {
@@ -199,11 +186,33 @@
       background: var(--secondary);
     }
 
+    /* HAKKIMIZDA BÖLÜMÜ */
+    .about-section {
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .about-section h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .about-section p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* HİZMETLERİMİZ */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      margin: 35px 0;
     }
 
     .service-card {
@@ -231,6 +240,7 @@
       color: #555;
     }
 
+    /* BİLGİ KUTUSU */
     .fun-facts {
       background: var(--light);
       border-left: 5px solid var(--primary);
@@ -252,6 +262,7 @@
       font-size: 1.1rem;
     }
 
+    /* İLETİŞİM */
     .contact-info {
       text-align: center;
       margin: 40px 0 20px;
@@ -318,33 +329,66 @@
       background: var(--primary);
     }
 
-    /* HESAP MAKİNESİ STİLİ */
-    #calculatorModal {
+    /* HESAP MAKİNESİ BUTONU */
+    #calculatorToggleBtn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: var(--light);
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      width: 280px;
       z-index: 999;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    #calculatorToggleBtn:hover {
+      transform: scale(1.1);
+      background: #b51d0d;
+    }
+
+    /* HESAP MAKİNESİ MODALI */
+    .calculator-wrapper {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 280px;
+      max-width: 90%;
+      border-radius: 30px;
       overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background-color: #000;
+      z-index: 998;
       display: none;
-      animation: fadeIn 0.3s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    #calculator {
+    .calculator {
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
-      background: var(--dark);
-      color: var(--light);
-      font-size: 30px;
+    }
+
+    .display {
+      background-color: #000;
+      color: white;
+      font-size: 40px;
       text-align: right;
+      padding: 15px;
       height: 80px;
+      overflow: hidden;
+      width: 100%;
     }
 
     .buttons {
@@ -352,83 +396,67 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       padding: 15px;
-      background: var(--light);
+      background-color: #1c1c1e;
+      width: 100%;
     }
 
     .button {
-      background: var(--dark);
-      color: var(--light);
+      height: 60px;
       font-size: 24px;
-      padding: 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: background 0.2s ease-in-out;
     }
 
     .button.operator {
-      background: var(--primary);
+      background-color: #ff9f0a;
+      color: white;
+      font-weight: 600;
     }
 
-    .button.equal {
-      background: #2e7d32;
+    .button.number {
+      background-color: #333333;
+      color: white;
     }
 
     .button.zero {
       grid-column: span 2;
+      border-radius: 50px;
     }
 
     .button.gray {
-      background: #a5a5a5;
+      background-color: #a5a5a5;
     }
 
-    .button:hover {
-      filter: brightness(1.1);
-    }
-
-    #calculatorToggleBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--primary);
-      color: var(--light);
-      font-size: 24px;
-      border: none;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
-    }
-
-    #calculatorToggleBtn:hover {
-      transform: scale(1.1);
+    .button.equal {
+      background-color: #ff9500;
+      color: white;
+      font-weight: 600;
     }
 
     @media (max-width: 768px) {
-      #calculatorModal {
+      header {
+        min-height: 350px;
+        padding: 4rem 0;
+      }
+      .logo {
+        font-size: 2.2rem;
+      }
+      .slogan {
+        font-size: 1.1rem;
+      }
+      .emergency-btn {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+      .calculator-wrapper {
         width: 90%;
         bottom: 90px;
         right: 10px;
-      }
-
-      #calculatorToggleBtn {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-      }
-
-      #calculator {
-        font-size: 24px;
-      }
-
-      .button {
-        font-size: 20px;
       }
     }
   </style>
@@ -444,6 +472,7 @@
 <!-- NAVIGATION -->
 <nav>
   <ul>
+    <li><a href="#about">Hakkımızda</a></li>
     <li><a href="#services">Hizmetlerimiz</a></li>
     <li><a href="#fun-facts">Bunları Biliyor Muydunuz?</a></li>
     <li><a href="#contact">İletişim</a></li>
@@ -453,12 +482,43 @@
 <!-- MAIN CONTENT -->
 <div class="container">
 
-  <!-- Acil Ara Butonu -->
+  <!-- ACİL DURUM BUTONU -->
   <a href="tel:05321541043" class="emergency-btn">
     <i class="fas fa-phone-alt"></i> HEMEN ARA: 0532 154 10 43
   </a>
 
-  <!-- Hizmetlerimiz -->
+  <!-- HAKKIMIZDA -->
+  <section id="about">
+    <h2>Hakkımızda</h2>
+    <div class="about-section">
+      <h3>Kimiz?</h3>
+      <p>
+        Furkan Oto Kurtarma olarak 7/24 kesintisiz şekilde Türkiye genelinde hizmet veriyoruz.
+        Arızalı ya da kazaya karışmış aracınızın bulunduğu yerden güvenle taşınmasını sağlıyor,
+        uzman ekip sayesinde hızlı ve kaliteli çözüm sunuyoruz.
+      </p>
+
+      <h3>Misyonumuz</h3>
+      <p>
+        Misyonumuz, yolda kalan herkesin yardımına koşmak ve en kısa sürede çözüme kavuşturmak.
+        Güven, hız ve deneyim üçgeniyle hareket ederek tüm müşterilerimize aynı standartta hizmet vermeyi amaçlıyoruz.
+      </p>
+
+      <h3>Vizyonumuz</h3>
+      <p>
+        Vizyonumuz, Türkiye'nin en yaygın ve en güvenilir oto kurtarma markası olmak.
+        Her geçen gün büyüyen filomuzla ve teknolojik altyapımızla hizmet alanımızı genişletmeyi sürdürüyoruz.
+      </p>
+
+      <h3>Neden Furkan Oto Kurtarma?</h3>
+      <p>
+        Çünkü her an çekerinizde olmaktan mutluluk duyarız. Uzman kadromuz, modern ekipmanlarımız ve hızlı yanıt sistemimizle
+        siz değerli kullanıcılarımıza her konuda destek oluyoruz. Sadece Bursa'da değil, tüm Türkiye’de 7/24 aktifiz.
+      </p>
+    </div>
+  </section>
+
+  <!-- HİZMETLERİMİZ -->
   <section id="services">
     <h2>Hizmetlerimiz</h2>
     <div class="services">
@@ -477,13 +537,13 @@
     </div>
   </section>
 
-  <!-- Bilgi Kutusu -->
+  <!-- BUNLARI BİLİYOR MUYDUNUZ? -->
   <section id="fun-facts" class="fun-facts">
     <h3>Bunları Biliyor Muydunuz?</h3>
     <p id="factText">Yükleniyor...</p>
   </section>
 
-  <!-- İletişim -->
+  <!-- İLETİŞİM -->
   <section id="contact">
     <h2>7/24 Bize Ulaşın</h2>
     <div class="contact-info">
@@ -516,46 +576,19 @@
   <p>FURKAN OTO KURTARMA - Türkiye'nin En Güvenilir Çekici Hizmeti</p>
 </footer>
 
-<!-- HESAP MAKİNESİ BUTONU -->
-<button id="calculatorToggleBtn" onclick="toggleCalculator()">🧮</button>
-
-<!-- HESAP MAKİNESİ MODALI -->
-<div id="calculatorModal">
-  <div id="calculator">0</div>
-  <div class="buttons">
-    <button class="button gray" onclick="clearDisplay()">C</button>
-    <button class="button gray" onclick="deleteLast()">⌫</button>
-    <button class="button operator" onclick="appendOperator('%')">%</button>
-    <button class="button operator" onclick="appendOperator('/')">÷</button>
-
-    <button class="button" onclick="appendNumber('7')">7</button>
-    <button class="button" onclick="appendNumber('8')">8</button>
-    <button class="button" onclick="appendNumber('9')">9</button>
-    <button class="button operator" onclick="appendOperator('*')">×</button>
-
-    <button class="button" onclick="appendNumber('4')">4</button>
-    <button class="button" onclick="appendNumber('5')">5</button>
-    <button class="button" onclick="appendNumber('6')">6</button>
-    <button class="button operator" onclick="appendOperator('-')">−</button>
-
-    <button class="button" onclick="appendNumber('1')">1</button>
-    <button class="button" onclick="appendNumber('2')">2</button>
-    <button class="button" onclick="appendNumber('3')">3</button>
-    <button class="button operator" onclick="appendOperator('+')">+</button>
-
-    <button class="button zero" onclick="appendNumber('0')">0</button>
-    <button class="button" onclick="appendNumber('.')">.</button>
-    <button class="button equal" onclick="calculateResult()">=</button>
-  </div>
-</div>
-
+<!-- DİNAMİK BİLGİ KUTUSU -->
 <script>
   const facts = [
     "Türkiye'de her yıl yaklaşık 500.000 araç arızalanıyor ve çekiciye ihtiyaç duyuyor.",
     "Otomobil sayısı artarken, yolda kalan araçların %70’i 10 dakika içinde yardım alabiliyor.",
     "Çekici servislerinin hızı, kazalar sonrası can kaybını azaltmada önemli rol oynuyor.",
     "Güvenli sürüş alışkanlıkları, yolda kalmayı %40 oranında azaltabilir.",
-    "Furkan Oto Kurtarma, Bursa merkezli olarak Türkiye'nin tüm illerine hizmet vermektedir."
+    "Furkan Oto Kurtarma, Bursa merkezli olarak Türkiye'nin tüm illerine hizmet veriyor.",
+    "Yolda kalan araçların %30'u lastik arızaları nedeniyle çekici çağırıyor.",
+    "Çekici hizmetleri, kış aylarında %60 artış gösteriyor.",
+    "Araç çekilmesi durumlarında %95 müşteri memnuniyeti sağlanıyor.",
+    "Sürüş esnasında yaşanan elektrik arızaları en çok tercih edilen çekici sebeplerinden biridir.",
+    "Furkan Oto Kurtarma, 7/24 kesintisiz hizmet veren tek isimlerden biridir."
   ];
 
   function getRandomFact() {
@@ -565,13 +598,52 @@
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("factText").textContent = getRandomFact();
   });
+</script>
 
-  // Hesap Makinesi Fonksiyonları
+<!-- HESAP MAKİNESİ BUTONU -->
+<button id="calculatorToggleBtn" onclick="toggleCalculator()">
+  <i class="fas fa-calculator"></i>
+</button>
+
+<!-- HESAP MAKİNESİ MODALI -->
+<div class="calculator-wrapper" id="calculatorModal">
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="button gray" onclick="clearDisplay()">C</button>
+      <button class="button gray" onclick="deleteLast()">⌫</button>
+      <button class="button gray" onclick="appendOperator('%')">%</button>
+      <button class="button operator" onclick="appendOperator('/')">÷</button>
+
+      <button class="button number" onclick="appendNumber('7')">7</button>
+      <button class="button number" onclick="appendNumber('8')">8</button>
+      <button class="button number" onclick="appendNumber('9')">9</button>
+      <button class="button operator" onclick="appendOperator('*')">×</button>
+
+      <button class="button number" onclick="appendNumber('4')">4</button>
+      <button class="button number" onclick="appendNumber('5')">5</button>
+      <button class="button number" onclick="appendNumber('6')">6</button>
+      <button class="button operator" onclick="appendOperator('-')">−</button>
+
+      <button class="button number" onclick="appendNumber('1')">1</button>
+      <button class="button number" onclick="appendNumber('2')">2</button>
+      <button class="button number" onclick="appendNumber('3')">3</button>
+      <button class="button operator" onclick="appendOperator('+')">+</button>
+
+      <button class="button number zero" onclick="appendNumber('0')">0</button>
+      <button class="button number" onclick="appendNumber('.')">.</button>
+      <button class="button equal" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+</div>
+
+<!-- HESAP MAKİNESİ JS -->
+<script>
   let currentInput = "0";
   let operatorPending = false;
 
   function updateDisplay() {
-    document.getElementById("calculator").textContent = currentInput;
+    document.getElementById("display").textContent = currentInput;
   }
 
   function appendNumber(num) {
@@ -610,14 +682,13 @@
 
   function calculateResult() {
     try {
-      const result = eval(currentInput);
+      const result = eval(currentInput.replace(/[^-()\d/*+.]/g, ""));
       currentInput = result.toString();
       operatorPending = false;
-      updateDisplay();
     } catch (error) {
       currentInput = "Hata";
-      updateDisplay();
     }
+    updateDisplay();
   }
 
   function toggleCalculator() {
@@ -625,8 +696,8 @@
     modal.style.display = modal.style.display === "none" ? "block" : "none";
   }
 
-  // ESC ile kapatma
-  document.addEventListener("keydown", (e) => {
+  // ESC tuşu ile kapat
+  document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") {
       document.getElementById("calculatorModal").style.display = "none";
     }
@@ -635,12 +706,3 @@
 
 </body>
 </html>
-
-
-    
-              <script>
-                              
-              </script>
-                        </body>
-                        </html>
-                    

@@ -524,6 +524,176 @@
   <section id="map">
     <p>Furkan Oto Kurtarma'nın merkezi konumu:</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d381.06449440751015!2d29.0993805!3d40.1753297!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3c29999c6bbb%3A0x78c0f4a97cf6fc03!2zWsO8bXLDvHRldmxlciwgS3VydGJhc2FuIENkLiBObzoxNTQsIDE2MzQwIFnEsWxkxLFyxLFtL0J1cnNh!5e0!3m2!1sen!2str!4v1751205821291!5m2!1sen!2str" width="100%" height="550" style="border:0; border-radius:16px; margin-bottom:32px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<!-- FOTOĞRAFLAR (GEÇİŞLİ SLIDER) -->
+<section id="gallery" style="margin-bottom:60px; background: #fff; padding:40px; border-radius:12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+  <h2>Fotoğraflar</h2>
+  <div class="slider">
+    <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <div class="slider-images">
+      <img src="https://i.hizliresim.com/q3nm388.jpg" class="slide active" alt="Furkan Oto Kurtarma 1">
+      <img src="https://i.hizliresim.com/3nu5q5k.jpg" class="slide" alt="Furkan Oto Kurtarma 2">
+      <img src="https://i.hizliresim.com/goehduc.jpg" class="slide" alt="Furkan Oto Kurtarma 3">
+    </div>
+    <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="slider-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+  </div>
+</section>
+
+<style>
+  .slider {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    background: #fafafa;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider-images {
+    width: 100%;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .slide {
+    display: none;
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    border-radius: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.7s;
+    opacity: 0;
+    z-index: 1;
+    background: #fff;
+  }
+  .slide.active {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+  }
+  .slider-btn {
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.2rem;
+    padding: 0 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s;
+    user-select: none;
+  }
+  .slider-btn:hover {
+    background: rgba(217,35,15,0.8);
+  }
+  .slider-btn.prev { left: 12px; }
+  .slider-btn.next { right: 12px; }
+  .slider-dots {
+    text-align: center;
+    margin-top: 12px;
+  }
+  .dot {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 0 5px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .dot.active {
+    background: var(--primary, #d9230f);
+  }
+  @media (max-width: 800px) {
+    .slider, .slider-images { min-height: 180px; height: 180px; }
+    .slide {
+      height: 180px;
+      min-height: 180px;
+      max-height: 180px;
+    }
+  }
+  @media (max-width: 500px) {
+    .slider, .slider-images { min-height: 120px; height: 120px; }
+    .slide {
+      height: 120px;
+      min-height: 120px;
+      max-height: 120px;
+    }
+    #gallery {
+      padding: 15px !important;
+    }
+  }
+</style>
+<script>
+  // Slider fonksiyonları
+  let slideIndex = 0;
+  let slideTimer = null;
+
+  function getSlides() {
+    return document.querySelectorAll('.slide');
+  }
+  function getDots() {
+    return document.querySelectorAll('.dot');
+  }
+
+  function showSlide(n) {
+    const slides = getSlides();
+    const dots = getDots();
+    if (slides.length === 0) return;
+    slideIndex = (n + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === slideIndex);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === slideIndex);
+    });
+  }
+
+  function changeSlide(n) {
+    showSlide(slideIndex + n);
+    resetSlideShow();
+  }
+
+  function goToSlide(n) {
+    showSlide(n);
+    resetSlideShow();
+  }
+
+  function startSlideShow() {
+    slideTimer = setInterval(() => {
+      showSlide(slideIndex + 1);
+    }, 3500);
+  }
+
+  function resetSlideShow() {
+    clearInterval(slideTimer);
+    startSlideShow();
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    showSlide(slideIndex);
+    startSlideShow();
+  });
+</script>
   <!-- HİZMETLERİMİZ -->
   <section id="services">
     <h2>Hizmetlerimiz</h2>

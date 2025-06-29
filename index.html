@@ -462,7 +462,18 @@
   </style>
 </head>
 <body>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Doğrulama yapılmadan siteye erişim engellenir
+  (function() {
+    if (localStorage.getItem("furkan_verif") !== "ok") {
+      window.location.href = "https://furkanotokurtarma.github.io/-verification/";
+    }
+  })();
+</script>
+<!-- HEADER -->
+<header>
+  ...
 <!-- HEADER -->
 <header>
   <div class="logo">FURKAN OTO KURTARMA</div>
